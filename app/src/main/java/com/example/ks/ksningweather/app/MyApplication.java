@@ -1,6 +1,8 @@
 package com.example.ks.ksningweather.app;
 
+import android.annotation.TargetApi;
 import android.app.Application;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 
@@ -12,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class MyApplication extends Application {
@@ -20,6 +23,7 @@ public class MyApplication extends Application {
     private static MyApplication mApplication;
     private CityDB mCityDB;
     private List<City> mCityList;
+    private List<String> listName;
 
     @Override
     public void onCreate() {
@@ -40,15 +44,31 @@ public class MyApplication extends Application {
             }
         }).start();
     }
+    @TargetApi(Build.VERSION_CODES.N)
     private boolean prepareCityList(){
         mCityList=mCityDB.getAllCity();
+        listName = new ArrayList<String>();
+
         int i=0;
-        for(City city:mCityList){
+        for(City city:mCityList) {
             i++;
-            String cityName=city.getCity();
-            String cityCode=city.getNumber();
-            Log.d(TAG,cityCode+":"+cityName);
+            String cityName = city.getCity();
+            String cityCode = city.getNumber();
+            Log.d(TAG, cityCode + ":" + cityName);
+
+
+            listName.add(cityName);
         }
+        listName.sort(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                String s1=o1.toLowerCase();
+                String s2=o2.toLowerCase();
+                return s1.compareTo(s2);//从a到z排序
+            }
+        });
+
+
         Log.d(TAG,"i="+i);
         return true;
     }

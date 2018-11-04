@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
+    android:layout_height="match_parent"
+    tools:context="com.example.ks.ksningweather.SelectCity">
+    <!--顶部-->
     <RelativeLayout
         android:id="@+id/title_top"
         android:layout_width="fill_parent"
@@ -35,58 +37,79 @@
 
     </RelativeLayout>
 
+
     <!--搜素框-->
+
     <RelativeLayout
         android:id="@+id/selectcity_search_rela"
         android:layout_width="fill_parent"
         android:layout_height="45.0dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="59dp">
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_toLeftOf="@+id/selectcity_search_buttonrela">
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/brandName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/searchText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+  <!--
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:completionHint="请输入城市"
+                android:completionThreshold="2" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/autoCompleteTextView"
+                android:text="搜素"/>
+
+-->
 
             <EditText
-                android:id="@+id/selectcity_search"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
+                android:id="@+id/select_search"
+                android:layout_width="374dp"
+                android:layout_height="35dp"
+                android:drawableLeft="@drawable/select_search_city"
+                android:drawablePadding="8.0dip"
                 android:hint="搜素全国城市"
-                android:paddingLeft="35.0dp"
-                android:background="@drawable/exit">
+                android:paddingBottom="8.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="30.0dip"
+                android:paddingTop="8.0dip"
+                android:singleLine="true"
+                android:background="@drawable/exit"
+                android:textColor="#ff000000"
+                android:textColorHint="#ffcccccc"
+                android:textSize="15.0sp">
 
             </EditText>
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/selectcity_search_buttonrela"
-            android:layout_width="80.0dp"
-            android:layout_height="45.0dp"
-            android:layout_alignParentRight="true">
-
-            <ImageView
-                android:id="@+id/selectcity_search_button"
-                android:layout_width="64dp"
-                android:layout_height="fill_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/select_search_city" />
-
-        </RelativeLayout>
 
     </RelativeLayout>
 
 
-
+<!--城市列表展开-->
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/selectcity_search_rela">
+        android:layout_below="@+id/selectcity_search_rela">
 
         <ListView
             android:id="@+id/title_list"

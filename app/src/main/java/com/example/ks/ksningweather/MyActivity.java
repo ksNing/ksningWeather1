@@ -8,7 +8,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +42,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
     private ImageView mCitySelect;
     private String updateCityCode;
+    private ProgressBar progressBar;
 
 
 
@@ -69,6 +74,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
         //为更新按钮添加单击事件
         mUpdateBtn = (ImageView) findViewById(R.id.title_update_btn);
         mUpdateBtn.setOnClickListener(this);
+        progressBar=(ProgressBar)findViewById(R.id.title_update_progress);
+
 
         //为选择城市ImageView添加单击事件
         mCitySelect = (ImageView) findViewById(R.id.title_city_manager);
@@ -111,10 +118,16 @@ public class MyActivity extends Activity implements View.OnClickListener {
 
         //单击事件如果是刷新天气应用发生
         if (view.getId() == R.id.title_update_btn) {
+
             //通过SharedPreferences读取城市id，如果没有定义则缺省为101010100（北京城市)
-            SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);
-            String cityCode = sharedPreferences.getString("main_city_code", "101010100");
-            Log.d("ksningWeather", cityCode);
+            SharedPreferences sharedPreferences = getSharedPreferences("cityCodePreferenced", Activity.MODE_PRIVATE);
+            String cityCode = sharedPreferences.getString("cityCode","");
+            if(!cityCode.equals("")){
+                Log.d("ksning",cityCode);
+                queryWeatherCode(cityCode);
+            }else{
+                queryWeatherCode("101010100");
+            }
 
             if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE) {
                 Log.d("ksningWeather", "网络ok");
@@ -124,6 +137,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
                 Toast.makeText(MyActivity.this, "网络失败", Toast.LENGTH_SHORT).show();
 
             }
+            mUpdateBtn.setVisibility(View.GONE);
+            progressBar.setVisibility(View.VISIBLE);
+
 
         }
 
@@ -323,6 +339,13 @@ public class MyActivity extends Activity implements View.OnClickListener {
      * @param todayWeather
      */
     void updateTodayWeather(TodayWeather todayWeather){
+
+
+        if(mUpdateBtn.getVisibility()==View.GONE&&progressBar.getVisibility()==View.VISIBLE){
+            progressBar.setVisibility(View.GONE);
+            mUpdateBtn.setVisibility(View.VISIBLE);
+        }
+
         city_name_Tv.setText(todayWeather.getCity()+"天气");
         cityTv.setText(todayWeather.getCity());
         timeTv.setText(todayWeather.getUpdatetime()+"发布");
