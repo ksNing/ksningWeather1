@@ -41,12 +41,15 @@ public class Login extends Activity implements View.OnClickListener {
         }
         if(userName.equals("admin")&&passWord.equals("0000")){
             Toast.makeText(Login.this, "成功登录", Toast.LENGTH_LONG).show();
-            Intent i=new Intent(this, MyActivity.class);
+            Intent i=new Intent(this, Activity2.class);
             startActivity(i);
             Login.this.finish();
         }else{
             Toast.makeText(Login.this, "用户名或密码错误", Toast.LENGTH_LONG).show();
         }
+        Intent i=new Intent(this,Activity2.class);
+        i.putExtra("ks",userName);
+        startActivity(i);
 
     }
 }

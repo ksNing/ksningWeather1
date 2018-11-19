@@ -14,6 +14,172 @@ public class TodayWeather {
     private String low;
     private String type;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    //未来三天的天气属性
+    //明天
+    private String date1;
+    private String low1;
+    private String high1;
+    private String weatherType1;
+    private String fengli1;
+    //后天
+    private String date2;
+    private String low2;
+    private String high2;
+    private String weatherType2;
+    private String fengli2;
+    //大后天
+    private String date3;
+    private String low3;
+    private String high3;
+    private String weatherType3;
+    private String fengli3;
+    //第四天
+    private String date4;
+    private String low4;
+    private String high4;
+    private String weatherType4;
+    private String fengli4;
+    //第五天
+    private String date5;
+    private String low5;
+    private String high5;
+    private String weatherType5;
+    private String fengli5;
+    //第六天
+    private String date6;
+    private String low6;
+    private String high6;
+    private String weatherType6;
+    private String fengli6;
+
+    public String getDate4() {
+        return date4;
+    }
+
+    public void setDate4(String date4) {
+        this.date4 = date4;
+    }
+
+    public String getLow4() {
+        return low4;
+    }
+
+    public void setLow4(String low4) {
+        this.low4 = low4;
+    }
+
+    public String getHigh4() {
+        return high4;
+    }
+
+    public void setHigh4(String high4) {
+        this.high4 = high4;
+    }
+
+    public String getWeatherType4() {
+        return weatherType4;
+    }
+
+    public void setWeatherType4(String weatherType4) {
+        this.weatherType4 = weatherType4;
+    }
+
+    public String getFengli4() {
+        return fengli4;
+    }
+
+    public void setFengli4(String fengli4) {
+        this.fengli4 = fengli4;
+    }
+
+    public String getDate5() {
+        return date5;
+    }
+
+    public void setDate5(String date5) {
+        this.date5 = date5;
+    }
+
+    public String getLow5() {
+        return low5;
+    }
+
+    public void setLow5(String low5) {
+        this.low5 = low5;
+    }
+
+    public String getHigh5() {
+        return high5;
+    }
+
+    public void setHigh5(String high5) {
+        this.high5 = high5;
+    }
+
+    public String getWeatherType5() {
+        return weatherType5;
+    }
+
+    public void setWeatherType5(String weatherType5) {
+        this.weatherType5 = weatherType5;
+    }
+
+    public String getFengli5() {
+        return fengli5;
+    }
+
+    public void setFengli5(String fengli5) {
+        this.fengli5 = fengli5;
+    }
+
+    public String getDate6() {
+        return date6;
+    }
+
+    public void setDate6(String date6) {
+        this.date6 = date6;
+    }
+
+    public String getLow6() {
+        return low6;
+    }
+
+    public void setLow6(String low6) {
+        this.low6 = low6;
+    }
+
+    public String getHigh6() {
+        return high6;
+    }
+
+    public void setHigh6(String high6) {
+        this.high6 = high6;
+    }
+
+    public String getWeatherType6() {
+        return weatherType6;
+    }
+
+    public void setWeatherType6(String weatherType6) {
+        this.weatherType6 = weatherType6;
+    }
+
+    public String getFengli6() {
+        return fengli6;
+    }
+
+    public void setFengli6(String fengli6) {
+        this.fengli6 = fengli6;
+    }
+
     public String getCity() {
         return city;
     }
@@ -102,12 +268,124 @@ public class TodayWeather {
         this.low = low;
     }
 
-    public String getType() {
-        return type;
+    public String getDate1() {
+        return date1;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDate1(String date1) {
+        this.date1 = date1;
+    }
+
+    public String getLow1() {
+        return low1;
+    }
+
+    public void setLow1(String low1) {
+        this.low1 = low1;
+    }
+
+    public String getHigh1() {
+        return high1;
+    }
+
+    public void setHigh1(String high1) {
+        this.high1 = high1;
+    }
+
+    public String getWeatherType1() {
+        return weatherType1;
+    }
+
+    public void setWeatherType1(String weatherType1) {
+        this.weatherType1 = weatherType1;
+    }
+
+    public String getFengli1() {
+        return fengli1;
+    }
+
+    public void setFengli1(String fengli1) {
+        this.fengli1 = fengli1;
+    }
+
+    public String getDate2() {
+        return date2;
+    }
+
+    public void setDate2(String date2) {
+        this.date2 = date2;
+    }
+
+    public String getLow2() {
+        return low2;
+    }
+
+    public void setLow2(String low2) {
+        this.low2 = low2;
+    }
+
+    public String getHigh2() {
+        return high2;
+    }
+
+    public void setHigh2(String high2) {
+        this.high2 = high2;
+    }
+
+    public String getWeatherType2() {
+        return weatherType2;
+    }
+
+    public void setWeatherType2(String weatherType2) {
+        this.weatherType2 = weatherType2;
+    }
+
+    public String getFengli2() {
+        return fengli2;
+    }
+
+    public void setFengli2(String fengli2) {
+        this.fengli2 = fengli2;
+    }
+
+    public String getDate3() {
+        return date3;
+    }
+
+    public void setDate3(String date3) {
+        this.date3 = date3;
+    }
+
+    public String getLow3() {
+        return low3;
+    }
+
+    public void setLow3(String low3) {
+        this.low3 = low3;
+    }
+
+    public String getHigh3() {
+        return high3;
+    }
+
+    public void setHigh3(String high3) {
+        this.high3 = high3;
+    }
+
+    public String getWeatherType3() {
+        return weatherType3;
+    }
+
+    public void setWeatherType3(String weatherType3) {
+        this.weatherType3 = weatherType3;
+    }
+
+    public String getFengli3() {
+        return fengli3;
+    }
+
+    public void setFengli3(String fengli3) {
+        this.fengli3 = fengli3;
     }
 
     @Override
